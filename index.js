@@ -40,8 +40,8 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-function is31Flavors(flavors){
-  return flavors.length === 31
+function is31Flavors(purple){
+  return purple.length === 31
 }
 
 console.log(is31Flavors(originalFlavors));
@@ -148,16 +148,17 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 hint - you can use the .includes method to help you solve this */
 
 function filterByWord(allFlavors, flavorType){
-  allFlavors.foreach(function(item){
-    allFlavors.includes (flavorType, item);
-    NewArray.push(item)
-    })
-  
-  return NewArray;
-
+  let NewArray = [];
+  for (i = 0; i < allFlavors.length; i++){
+    if(allFlavors[i].includes(flavorType)){
+       NewArray.push(allFlavors[i]);
+      }
+  }
+  return NewArray; 
 }
+  console.log(filterByWord(originalFlavors, "Chocolate"));
 
-console.log(filterByWord(originalFlavors, "Chocolate"));
+
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
 
